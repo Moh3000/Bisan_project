@@ -1,0 +1,1105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1180.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController">
+  <tabs>
+      <Tab text="Arithmatic Tree">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TreeView fx:id="treeView" layoutX="25.0" layoutY="14.0" prefHeight="502.0" prefWidth="491.0" />
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+      <Tab text="Balances">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TabPane prefHeight="570.0" prefWidth="1180.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text=" Banks and balances">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="1180.0">
+                                 <children>
+                                    <TableView fx:id="BankTable" layoutX="233.0" layoutY="61.0" prefHeight="337.0" prefWidth="353.0">
+                                      <columns>
+                                        <TableColumn fx:id="BankID" prefWidth="104.0" text="ID" />
+                                        <TableColumn fx:id="BankName" prefWidth="121.0" text="Name" />
+                                          <TableColumn fx:id="BankPalance" prefWidth="127.0" text="Balance" />
+                                      </columns>
+                                    </TableView>
+                                    <Label layoutX="233.0" layoutY="454.0" text="Cash Balance" textFill="#1602f5">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="CashPalance" layoutX="358.0" layoutY="452.0" prefHeight="29.0" prefWidth="229.0" />
+                                    <Button layoutX="828.0" layoutY="269.0" mnemonicParsing="false" onAction="#AddBank" prefHeight="32.0" prefWidth="120.0" text="ADD" />
+                                    <Button layoutX="681.0" layoutY="269.0" mnemonicParsing="false" onAction="#DeleteBank" prefHeight="32.0" prefWidth="120.0" text="Delete" />
+                                    <TextField fx:id="BankNameText" layoutX="795.0" layoutY="158.0" />
+                                    <TextField fx:id="BankPalanceText" layoutX="795.0" layoutY="208.0" />
+                                    <Label layoutX="681.0" layoutY="160.0" text="Bank Name" textFill="#1602f5">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="681.0" layoutY="210.0" text="Bank Balance" textFill="#1602f5">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="Clint Balance">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="1180.0">
+                                 <children>
+                                    <TableView fx:id="DataClintTable" layoutX="415.0" layoutY="85.0" prefHeight="383.0" prefWidth="639.0">
+                                      <columns>
+                                        <TableColumn fx:id="ClintName" prefWidth="89.0" text="Clint Name" />
+                                        <TableColumn fx:id="ClintBill" prefWidth="54.0" text="Bill" />
+                                          <TableColumn fx:id="ClintCapture" prefWidth="61.0" text="Captur" />
+                                          <TableColumn fx:id="ClintRegisTo" prefWidth="108.0" text="Register To Him" />
+                                          <TableColumn fx:id="ClintRegisOn" prefWidth="101.0" text="Register On Him" />
+                                          <TableColumn fx:id="ClintBalance" prefWidth="58.0" text="Balance" />
+                                          <TableColumn fx:id="Cday" prefWidth="51.0" text="Day" />
+                                          <TableColumn fx:id="CMonth" prefWidth="58.0" text="Month" />
+                                          <TableColumn fx:id="CYear" prefWidth="58.0" text="Year" />
+                                      </columns>
+                                    </TableView>
+                                    <ChoiceBox fx:id="ClintData" layoutX="633.0" layoutY="38.0" prefHeight="32.0" prefWidth="150.0" />
+                                    <Label layoutX="587.0" layoutY="42.0" text="Clint" textFill="#2c07e5">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Button layoutX="803.0" layoutY="38.0" mnemonicParsing="false" onAction="#ShowData" prefHeight="32.0" text="Show" />
+                                    <TextField fx:id="YearTC" layoutX="268.0" layoutY="297.0" prefHeight="30.0" prefWidth="55.0" />
+                                    <TextField fx:id="YearFC" layoutX="268.0" layoutY="232.0" prefHeight="30.0" prefWidth="55.0" />
+                                    <Label layoutX="85.0" layoutY="235.0" text="From" textFill="#2c07e5">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="95.0" layoutY="298.0" text="To" textFill="#2c07e5">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="144.0" layoutY="265.0" text="Day" textFill="#2c07e5">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="280.0" layoutY="265.0" text="Year" textFill="#2c07e5">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="204.0" layoutY="265.0" text="Month" textFill="#2c07e5">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="132.0" layoutY="179.0" text="You Must Enter The Date" textFill="#2c07e5">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <ChoiceBox fx:id="DayTC" layoutX="132.0" layoutY="295.0" prefHeight="30.0" prefWidth="55.0" />
+                                    <ChoiceBox fx:id="DayFC" layoutX="132.0" layoutY="232.0" prefHeight="30.0" prefWidth="55.0" />
+                                    <ChoiceBox fx:id="MonthTC" layoutX="200.0" layoutY="297.0" prefHeight="30.0" prefWidth="55.0" />
+                                    <ChoiceBox fx:id="MonthFC" layoutX="200.0" layoutY="231.0" prefHeight="32.0" prefWidth="55.0" />
+                                 </children></AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="All Clints Balance">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="550.0" prefWidth="1180.0">
+                                       <children>
+                                          <Label layoutX="502.0" layoutY="55.0" text="Clints Balance" textFill="#2500ff">
+                                             <font>
+                                                <Font size="29.0" />
+                                             </font>
+                                          </Label>
+                                          <TableView fx:id="AllClintsTable" layoutX="393.0" layoutY="113.0" prefHeight="383.0" prefWidth="395.0">
+                                             <columns>
+                                                <TableColumn fx:id="AllClintName" prefWidth="198.0" text="Clint Name" />
+                                                <TableColumn fx:id="AllClintBalance" prefWidth="196.0" text="Balance" />
+                                             </columns>
+                                          </TableView>
+                                       </children>
+                                    </AnchorPane>
+                                 </children></AnchorPane>
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+      <Tab text="Sales">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="ItemTableS" layoutX="740.0" layoutY="46.0" prefHeight="270.0" prefWidth="356.0">
+                     <columns>
+                        <TableColumn fx:id="ItemIDS" prefWidth="90.0" text="Item ID" />
+                        <TableColumn fx:id="ItemNameS" text="Item Name" />
+                        <TableColumn fx:id="ItemPriceS" prefWidth="82.0" text="Item Price" />
+                        <TableColumn fx:id="HowMuchS" prefWidth="103.0" text="Our Quantity" />
+                     </columns>
+                  </TableView>
+                  <TextField fx:id="QuantityText" layoutX="534.0" layoutY="46.0" prefHeight="30.0" prefWidth="151.0" />
+                  <TextField fx:id="OrderPriceO" layoutX="251.0" layoutY="430.0" prefWidth="150.0" />
+                  <Button layoutX="460.0" layoutY="83.0" minHeight="30.0" mnemonicParsing="false" onAction="#AddToOrder" prefHeight="30.0" prefWidth="226.0" text="Add To Order" />
+                  <Button layoutX="461.0" layoutY="125.0" minHeight="30.0" mnemonicParsing="false" onAction="#DeleteFromOrder" prefHeight="30.0" prefWidth="225.0" text="Delete From Order" />
+                  <Button layoutX="285.0" layoutY="498.0" mnemonicParsing="false" onAction="#CanceleOrder" prefHeight="25.0" prefWidth="81.0" text="Cancel" />
+                  <Button defaultButton="true" layoutX="119.0" layoutY="498.0" mnemonicParsing="false" onAction="#ConfirmSale" prefHeight="25.0" prefWidth="84.0" text="Save" />
+                  <Label layoutX="119.0" layoutY="432.0" text="Order Price" textFill="#1800ed">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="460.0" layoutY="49.0" text="Quantity" textFill="#1800ed">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="416.0" layoutY="300.0" mnemonicParsing="false" onAction="#ManegeCheck" prefHeight="32.0" text="Manage Cheques" />
+                  <TextArea fx:id="CusOrdTArea" layoutX="739.0" layoutY="330.0" prefHeight="200.0" prefWidth="357.0" />
+                  <VBox alignment="CENTER" layoutX="85.0" layoutY="45.0" prefHeight="237.0" prefWidth="151.0" spacing="26.0">
+                     <children>
+                        <Label text="Customer Name" textFill="#1800ed">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label text="Delivery Method" textFill="#1800ed">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label text="Payment Currency" textFill="#1800ed">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label text="Pay Method" textFill="#1800ed">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label text="Cash Payments" textFill="#1800ed">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label text="Cheque Payments" textFill="#1800ed">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" fillWidth="false" layoutX="249.0" layoutY="41.0" spacing="20.0">
+                     <children>
+                        <ChoiceBox fx:id="CustomerNameChoice" prefHeight="32.0" prefWidth="150.0" />
+                        <ChoiceBox fx:id="DelivaryMethodChoice" prefHeight="32.0" prefWidth="150.0" />
+                        <ChoiceBox fx:id="CurrancyChoice" prefHeight="32.0" prefWidth="150.0" />
+                        <ChoiceBox fx:id="PayMethod" prefHeight="32.0" prefWidth="150.0" />
+                        <TextField fx:id="CustomerPayText" prefHeight="32.0" prefWidth="150.0" />
+                        <TextField fx:id="CheckPayText" prefHeight="32.0" prefWidth="150.0" />
+                     </children>
+                  </VBox>
+                  <Button layoutX="640.0" layoutY="476.0" mnemonicParsing="false" onAction="#updateTax" prefHeight="32.0" text="Update" />
+                  <Label layoutX="450.0" layoutY="434.0" text="Tax Percentage:" textFill="#1800ed">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="taxPercentage" layoutX="570.0" layoutY="430.0" prefHeight="32.0" prefWidth="150.0" />
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+      <Tab text="Purchases">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="459.0" layoutY="168.0" text="Item" textFill="#0e05ff">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="244.0" layoutY="216.0" text="Item Price" textFill="#0e05ff">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="459.0" layoutY="216.0" text="Item Quantity" textFill="#0e05ff">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox fx:id="SItemIDChoice" layoutX="501.0" layoutY="168.0" prefWidth="150.0" />
+                  <TextField fx:id="SItemPriceText" layoutX="325.0" layoutY="216.0" prefHeight="25.0" prefWidth="116.0" />
+                  <TextField fx:id="SItemQuantity" layoutX="565.0" layoutY="216.0" prefHeight="25.0" prefWidth="88.0" />
+                  <Button layoutX="459.0" layoutY="257.0" mnemonicParsing="false" onAction="#SAddToOrder" prefHeight="25.0" prefWidth="195.0" text="Add" />
+                  <Button layoutX="244.0" layoutY="257.0" mnemonicParsing="false" onAction="#SDeleteFromOrder" prefHeight="25.0" prefWidth="200.0" text="Delete" />
+                  <Button layoutX="347.0" layoutY="368.0" mnemonicParsing="false" onAction="#ConfirmPurchas" prefHeight="25.0" prefWidth="104.0" text="Confirm" />
+                  <Button layoutX="461.0" layoutY="368.0" mnemonicParsing="false" onAction="#CancelPurchas" prefHeight="25.0" prefWidth="110.0" text="Cancel" />
+                  <Label layoutX="347.0" layoutY="324.0" text="Price" textFill="#0e05ff">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="SPriceText" layoutX="397.0" layoutY="324.0" prefHeight="25.0" prefWidth="174.0" />
+                  <Label layoutX="244.0" layoutY="168.0" text="Suplier Name" textFill="#0e05ff">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox fx:id="SuplierNameChoice" layoutX="351.0" layoutY="168.0" prefHeight="25.0" prefWidth="90.0" />
+                  <TextArea fx:id="SupOrdTArea" layoutX="692.0" layoutY="168.0" prefHeight="236.0" prefWidth="244.0" />
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+      <Tab text="Employees">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TabPane layoutY="-1.0" prefHeight="570.0" prefWidth="1180.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="About">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="ETable" layoutX="14.0" layoutY="14.0" onMouseClicked="#VeiwDaily" prefHeight="473.0" prefWidth="305.0">
+                                      <columns>
+                                        <TableColumn fx:id="EmployeeID" prefWidth="53.0" text="ID" />
+                                        <TableColumn fx:id="EmployeeName" prefWidth="82.0" text="Name" />
+                                          <TableColumn fx:id="EmployeePhone" prefWidth="89.0" text="Phone" />
+                                          <TableColumn fx:id="EmployeePart" prefWidth="79.0" text="Job" />
+                                      </columns>
+                                    </TableView>
+                                    <TableView fx:id="EDTable" layoutX="326.0" layoutY="13.0" prefHeight="474.0" prefWidth="393.0">
+                                      <columns>
+                                        <TableColumn fx:id="HourlySalary" prefWidth="60.0" text="HS" />
+                                          <TableColumn fx:id="DayWork" prefWidth="50.0" text="Day" />
+                                          <TableColumn fx:id="MonthWork" prefWidth="61.0" text="Month" />
+                                          <TableColumn fx:id="YearWork" prefWidth="49.0" text="Year" />
+                                          <TableColumn fx:id="Hours" prefWidth="52.0" text="H work" />
+                                          <TableColumn fx:id="Additional" prefWidth="63.0" text="H Add" />
+                                          <TableColumn fx:id="Advance" prefWidth="56.0" text="S Adv" />
+                                      </columns>
+                                    </TableView>
+                                    <Label layoutX="752.0" layoutY="44.0" text="Name" textFill="#3609e0">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="752.0" layoutY="77.0" text="Phone" textFill="#3609e0">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="752.0" layoutY="113.0" text="Job" textFill="#3609e0">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="ENameText" layoutX="814.0" layoutY="44.0" />
+                                    <TextField fx:id="EPhone" layoutX="814.0" layoutY="77.0" />
+                                    <TextField fx:id="EPartText" layoutX="814.0" layoutY="113.0" />
+                                    <Button layoutX="752.0" layoutY="172.0" mnemonicParsing="false" onAction="#AddNewE" prefHeight="25.0" prefWidth="91.0" text="ADD" />
+                                    <Button layoutX="872.0" layoutY="172.0" mnemonicParsing="false" onAction="#DeleteE" prefHeight="25.0" prefWidth="91.0" text="Delete" />
+                                    <Button layoutX="789.0" layoutY="357.0" mnemonicParsing="false" onAction="#ShowEDFT" prefHeight="25.0" prefWidth="174.0" text="Show" />
+                                    <TextField fx:id="EYearT" layoutX="904.0" layoutY="323.0" prefHeight="25.0" prefWidth="59.0" />
+                                    <TextField fx:id="EYearF" layoutX="904.0" layoutY="252.0" prefHeight="25.0" prefWidth="59.0" />
+                                    <ChoiceBox fx:id="EMonthF" layoutX="845.0" layoutY="252.0" prefHeight="25.0" prefWidth="51.0" />
+                                    <ChoiceBox fx:id="EDayF" layoutX="786.0" layoutY="252.0" prefHeight="25.0" prefWidth="53.0" />
+                                    <ChoiceBox fx:id="EDayT" layoutX="788.0" layoutY="323.0" prefHeight="25.0" prefWidth="51.0" />
+                                    <ChoiceBox fx:id="EMonthT" layoutX="847.0" layoutY="323.0" prefHeight="25.0" prefWidth="49.0" />
+                                    <Label layoutX="799.0" layoutY="286.0" text="Day" textFill="#3609e0">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="848.0" layoutY="286.0" text="Month" textFill="#3609e0">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="918.0" layoutY="286.0" text="Year" textFill="#3609e0">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="734.0" layoutY="323.0" text="To" textFill="#3609e0">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="734.0" layoutY="252.0" text="From" textFill="#3609e0">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="EPaiedText" layoutX="904.0" layoutY="431.0" prefHeight="25.0" prefWidth="59.0" />
+                                    <TextField fx:id="EAdvanseText" layoutX="819.0" layoutY="431.0" prefHeight="25.0" prefWidth="59.0" />
+                                    <TextField fx:id="ESalaryText" layoutX="737.0" layoutY="431.0" prefHeight="25.0" prefWidth="59.0" />
+                                    <Label layoutX="746.0" layoutY="399.0" text="Salary" textFill="#3609e0">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="818.0" layoutY="399.0" text="Advanse" textFill="#3609e0">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="914.0" layoutY="399.0" text="paied" textFill="#3609e0">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Button layoutX="795.0" layoutY="471.0" mnemonicParsing="false" onAction="#ConfirmPay" prefHeight="32.0" prefWidth="168.0" text="Confirm to pay" />
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="Daliy work">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <GridPane layoutX="198.0" layoutY="93.0" minHeight="200.0" prefHeight="272.0" prefWidth="350.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label text="Employee ID" textFill="#1f02f0">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <ChoiceBox fx:id="EIDText" prefHeight="25.0" prefWidth="232.0" GridPane.columnIndex="1" />
+                                          <Label text="Salary Per Hour" textFill="#1f02f0" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="HSText" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <Label text="Overtime Hours" textFill="#1f02f0" GridPane.rowIndex="3">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="AHText" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <Label text="Hours Worked" textFill="#1f02f0" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="HWText" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Label text="Advanced" textFill="#1f02f0" GridPane.rowIndex="4">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="ASText" prefWidth="193.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                       </children>
+                                    </GridPane>
+                                    <GridPane layoutX="632.0" layoutY="191.0" prefHeight="162.0" prefWidth="350.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label text="Pay Method" textFill="#1f02f0">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <ChoiceBox fx:id="FromE" prefHeight="25.0" prefWidth="223.0" GridPane.columnIndex="1" />
+                                          <Label text="Bank" textFill="#1f02f0" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <ChoiceBox fx:id="BanksNameO" prefHeight="25.0" prefWidth="194.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <Button defaultButton="true" mnemonicParsing="false" onAction="#saveED" prefHeight="32.0" prefWidth="209.0" text="Confirm And Save" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Button mnemonicParsing="false" onAction="#CancelED" prefHeight="32.0" prefWidth="201.0" text="Cancel" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                       </children>
+                                    </GridPane>
+                                 </children></AnchorPane>
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+      <Tab text="Bonds">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TabPane prefHeight="570.0" prefWidth="1180.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="Capture">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="CaptureTable" layoutX="30.0" layoutY="25.0" prefHeight="412.0" prefWidth="417.0">
+                                      <columns>
+                                        <TableColumn fx:id="CaptureID" prefWidth="49.0" text="ID" />
+                                        <TableColumn fx:id="CID" prefWidth="50.0" text="CID" />
+                                          <TableColumn fx:id="TheCapture" prefWidth="101.0" text="How much" />
+                                          <TableColumn fx:id="DayCa" prefWidth="70.0" text="Day" />
+                                          <TableColumn fx:id="MonthCa" prefWidth="70.0" text="Month" />
+                                          <TableColumn fx:id="YearCa" prefWidth="76.0" text="Year" />
+                                      </columns>
+                                    </TableView>
+                                    <ChoiceBox fx:id="CChoice" layoutX="673.0" layoutY="94.0" prefHeight="30.0" prefWidth="70.0" />
+                                    <Label layoutX="571.0" layoutY="97.0" text="Customer ID" textFill="#1e00ff">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Button layoutX="748.0" layoutY="94.0" mnemonicParsing="false" onAction="#ShowCaFT" prefHeight="30.0" prefWidth="70.0" text="Show" />
+                                    <TextField fx:id="HMCa" layoutX="669.0" layoutY="311.0" prefHeight="29.0" prefWidth="195.0" />
+                                    <Label layoutX="581.0" layoutY="311.0" text="Price" textFill="#1e00ff">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Button layoutX="783.0" layoutY="348.0" mnemonicParsing="false" onAction="#AddCa" prefHeight="25.0" prefWidth="66.0" text="Add" />
+                                    <Button layoutX="33.0" layoutY="449.0" mnemonicParsing="false" onAction="#ShowAllCa" prefHeight="32.0" prefWidth="412.0" text="ShowAll" />
+                                    <Label layoutX="581.0" layoutY="348.0" text="Currancy" textFill="#1e00ff">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <ChoiceBox fx:id="CACChoice" layoutX="668.0" layoutY="348.0" prefHeight="25.0" prefWidth="107.0" />
+                                    <TextField fx:id="YearTCa" layoutX="753.0" layoutY="208.0" prefHeight="30.0" prefWidth="70.0" />
+                                    <TextField fx:id="YearFCa" layoutX="753.0" layoutY="143.0" prefHeight="30.0" prefWidth="70.0" />
+                                    <Label layoutX="570.0" layoutY="146.0" text="From" textFill="#2c07e5">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="572.0" layoutY="211.0" text="To" textFill="#2c07e5">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="629.0" layoutY="176.0" text="Day" textFill="#2c07e5">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="773.0" layoutY="176.0" text="Year" textFill="#2c07e5">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="689.0" layoutY="176.0" text="Month" textFill="#2c07e5">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <ChoiceBox fx:id="DayTCa" layoutX="617.0" layoutY="208.0" prefHeight="30.0" prefWidth="55.0" />
+                                    <ChoiceBox fx:id="DayFCa" layoutX="617.0" layoutY="143.0" prefHeight="30.0" prefWidth="55.0" />
+                                    <ChoiceBox fx:id="MonthTCa" layoutX="685.0" layoutY="208.0" prefHeight="30.0" prefWidth="55.0" />
+                                    <ChoiceBox fx:id="MonthFCa" layoutX="685.0" layoutY="142.0" prefHeight="32.0" prefWidth="55.0" />
+                                    <Label layoutX="582.0" layoutY="271.0" prefHeight="25.0" prefWidth="279.0" text="To Add " textFill="#1e00ff">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children></AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="Exchange">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="ExchangeTable" layoutX="24.0" layoutY="14.0" prefHeight="445.0" prefWidth="621.0">
+                                       <columns>
+                                          <TableColumn fx:id="ExID" prefWidth="41.0" text="ID" />
+                                          <TableColumn fx:id="ExFrom" prefWidth="53.0" text="From" />
+                                          <TableColumn fx:id="ExFromID" prefWidth="85.0" text="From ID" />
+                                          <TableColumn fx:id="ExDes" prefWidth="74.0" text="Describe" />
+                                          <TableColumn fx:id="ExDay" prefWidth="82.0" text="Day" />
+                                          <TableColumn fx:id="ExMonth" prefWidth="66.0" text="Month" />
+                                          <TableColumn fx:id="ExYear" prefWidth="75.0" text="Year" />
+                                          <TableColumn fx:id="ExMuch" prefWidth="70.0" text="How Much" />
+                                          <TableColumn fx:id="ExCyrr" prefWidth="75.0" text="Currancy" />
+                                       </columns>
+                                    </TableView>
+                                    <TextField fx:id="ExYearT" layoutX="883.0" layoutY="156.0" prefHeight="25.0" prefWidth="57.0" />
+                                    <TextField fx:id="ExYearF" layoutX="885.0" layoutY="76.0" prefHeight="25.0" prefWidth="53.0" />
+                                    <Label layoutX="707.0" layoutY="76.0" text="From" textFill="#1e00ff">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="717.0" layoutY="156.0" text="To" textFill="#1e00ff">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="764.0" layoutY="115.0" text="Day" textFill="#1e00ff">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="821.0" layoutY="115.0" text="Month" textFill="#1e00ff">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="896.0" layoutY="115.0" text="Year" textFill="#1e00ff">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="705.0" layoutY="31.0" text="From who" textFill="#1e00ff">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <ChoiceBox fx:id="Fromwho" layoutX="793.0" layoutY="31.0" prefHeight="25.0" prefWidth="142.0" />
+                                    <Button layoutX="767.0" layoutY="197.0" mnemonicParsing="false" onAction="#ShowExFT" prefHeight="25.0" prefWidth="156.0" text="Show" />
+                                    <Button layoutX="767.0" layoutY="386.0" mnemonicParsing="false" onAction="#AddEx" prefHeight="25.0" prefWidth="157.0" text="Add" />
+                                    <Button layoutX="767.0" layoutY="444.0" mnemonicParsing="false" onAction="#ExShowAll" prefHeight="25.0" prefWidth="156.0" text="Show All" />
+                                    <Label layoutX="748.0" layoutY="337.0" text="How Much" textFill="#1e00ff">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="746.0" layoutY="299.0" text="Describe" textFill="#1e00ff">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="CaDescribe" layoutX="835.0" layoutY="299.0" prefHeight="25.0" prefWidth="89.0" />
+                                    <TextField fx:id="CaMuch" layoutX="835.0" layoutY="337.0" prefHeight="25.0" prefWidth="89.0" />
+                                    <ChoiceBox fx:id="ExDayF" layoutX="751.0" layoutY="76.0" prefHeight="25.0" prefWidth="54.0" />
+                                    <ChoiceBox fx:id="ExMonthF" layoutX="818.0" layoutY="76.0" prefHeight="25.0" prefWidth="54.0" />
+                                    <ChoiceBox fx:id="ExDayT" layoutX="751.0" layoutY="156.0" prefHeight="25.0" prefWidth="54.0" />
+                                    <ChoiceBox fx:id="ExMonthT" layoutX="818.0" layoutY="156.0" prefHeight="25.0" prefWidth="54.0" />
+                                    <Label layoutX="24.0" layoutY="469.0" text="Sum" textFill="#1e00ff">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="EXsum" layoutX="74.0" layoutY="469.0" />
+                                 </children></AnchorPane>
+                        </content>
+                      </Tab>
+                        <Tab text="Limitation">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TabPane prefHeight="550.0" prefWidth="1180.0" tabClosingPolicy="UNAVAILABLE">
+                                      <tabs>
+                                        <Tab text="To us">
+                                             <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="1180.0">
+                                                   <children>
+                                                      <TableView fx:id="RegisTuTable" layoutX="14.0" layoutY="15.0" prefHeight="445.0" prefWidth="417.0">
+                                                         <columns>
+                                                            <TableColumn fx:id="RTID" prefWidth="50.0" text="ID" />
+                                                            <TableColumn fx:id="RTCustomerID" prefWidth="63.0" text="CID" />
+                                                            <TableColumn fx:id="RTDay" prefWidth="84.0" text="Day" />
+                                                            <TableColumn fx:id="RTMonth" prefWidth="73.0" text="Month" />
+                                                            <TableColumn fx:id="RTYear" prefWidth="69.0" text="Year" />
+                                                            <TableColumn fx:id="RTMuch" prefWidth="77.0" text="Much" />
+                                                         </columns>
+                                                      </TableView>
+                                                      <TextField fx:id="RTYearChoiceT" layoutX="762.0" layoutY="211.0" prefHeight="25.0" prefWidth="57.0" />
+                                                      <TextField fx:id="RTYearChoiceF" layoutX="761.0" layoutY="161.0" prefHeight="25.0" prefWidth="59.0" />
+                                                      <Label layoutX="577.0" layoutY="161.0" text="From" textFill="#1e00ff">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label layoutX="579.0" layoutY="211.0" text="To" textFill="#1e00ff">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label layoutX="636.0" layoutY="186.0" text="Day" textFill="#1e00ff">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label layoutX="694.0" layoutY="186.0" text="Month" textFill="#1e00ff">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label layoutX="778.0" layoutY="186.0" text="Year" textFill="#1e00ff">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <ChoiceBox fx:id="RTCIDChoice" layoutX="672.0" layoutY="99.0" prefHeight="25.0" prefWidth="146.0" />
+                                                      <Label layoutX="573.0" layoutY="99.0" text="Customer ID" textFill="#1e00ff">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <ChoiceBox fx:id="RTDayChoiceT" layoutX="625.0" layoutY="211.0" prefHeight="25.0" prefWidth="54.0" />
+                                                      <ChoiceBox fx:id="RTDayChoiceF" layoutX="625.0" layoutY="161.0" prefHeight="25.0" prefWidth="54.0" />
+                                                      <ChoiceBox fx:id="RTMonthChoiceT" layoutX="691.0" layoutY="211.0" prefHeight="25.0" prefWidth="54.0" />
+                                                      <ChoiceBox fx:id="RTMonthChoiceF" layoutX="691.0" layoutY="161.0" prefHeight="25.0" prefWidth="54.0" />
+                                                      <Button layoutX="628.0" layoutY="259.0" mnemonicParsing="false" onAction="#RTShow" prefHeight="25.0" prefWidth="191.0" text="Show" />
+                                                      <TextField fx:id="RTMuchText" layoutX="723.0" layoutY="306.0" prefHeight="25.0" prefWidth="97.0" />
+                                                      <Label layoutX="632.0" layoutY="306.0" text="How Much" textFill="#1e00ff">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Button layoutX="628.0" layoutY="346.0" mnemonicParsing="false" onAction="#RTADD" prefHeight="25.0" prefWidth="191.0" text="ADD" />
+                                                      <Button layoutX="628.0" layoutY="389.0" mnemonicParsing="false" onAction="#RTShowALL" prefHeight="25.0" prefWidth="191.0" text="Show All" />
+                                                   </children>
+                                                </AnchorPane>
+                                             </content>
+                                        </Tab>
+                                        <Tab text="On us">
+                                          <content>
+                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                   <children>
+                                                      <TableView fx:id="RegisOuTable" layoutX="14.0" layoutY="15.0" prefHeight="445.0" prefWidth="417.0">
+                                                         <columns>
+                                                            <TableColumn fx:id="ROID" prefWidth="50.0" text="ID" />
+                                                            <TableColumn fx:id="ROCustomerID" prefWidth="63.0" text="CID" />
+                                                            <TableColumn fx:id="RODay" prefWidth="84.0" text="Day" />
+                                                            <TableColumn fx:id="ROMonth" prefWidth="73.0" text="Month" />
+                                                            <TableColumn fx:id="ROYear" prefWidth="69.0" text="Year" />
+                                                            <TableColumn fx:id="ROMuch" prefWidth="77.0" text="Much" />
+                                                         </columns>
+                                                      </TableView>
+                                                      <TextField fx:id="ROYearChoiceT" layoutX="762.0" layoutY="163.0" prefHeight="25.0" prefWidth="57.0" />
+                                                      <TextField fx:id="ROYearChoiceF" layoutX="761.0" layoutY="113.0" prefHeight="25.0" prefWidth="59.0" />
+                                                      <Label layoutX="577.0" layoutY="113.0" text="From" textFill="#1e00ff">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label layoutX="579.0" layoutY="163.0" text="To" textFill="#1e00ff">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label layoutX="636.0" layoutY="138.0" text="Day" textFill="#1e00ff">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label layoutX="694.0" layoutY="138.0" text="Month" textFill="#1e00ff">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label layoutX="778.0" layoutY="138.0" text="Year" textFill="#1e00ff">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <ChoiceBox fx:id="ROCIDChoice" layoutX="672.0" layoutY="51.0" prefHeight="25.0" prefWidth="146.0" />
+                                                      <Label layoutX="573.0" layoutY="51.0" text="Customer ID" textFill="#1e00ff">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <ChoiceBox fx:id="RODayChoiceT" layoutX="625.0" layoutY="163.0" prefHeight="25.0" prefWidth="54.0" />
+                                                      <ChoiceBox fx:id="RODayChoiceF" layoutX="625.0" layoutY="113.0" prefHeight="25.0" prefWidth="54.0" />
+                                                      <ChoiceBox fx:id="ROMonthChoiceT" layoutX="691.0" layoutY="163.0" prefHeight="25.0" prefWidth="54.0" />
+                                                      <ChoiceBox fx:id="ROMonthChoiceF" layoutX="691.0" layoutY="113.0" prefHeight="25.0" prefWidth="54.0" />
+                                                      <Button layoutX="628.0" layoutY="211.0" mnemonicParsing="false" onAction="#ROShow" prefHeight="25.0" prefWidth="191.0" text="Show" />
+                                                      <TextField fx:id="ROMuchText" layoutX="721.0" layoutY="283.0" prefHeight="25.0" prefWidth="97.0" />
+                                                      <Label layoutX="626.0" layoutY="283.0" text="How Many" textFill="#1e00ff">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Button layoutX="628.0" layoutY="350.0" mnemonicParsing="false" onAction="#ROADD" prefHeight="25.0" prefWidth="191.0" text="ADD" />
+                                                      <Button layoutX="628.0" layoutY="393.0" mnemonicParsing="false" onAction="#ROShowALL" prefHeight="25.0" prefWidth="191.0" text="Show All" />
+                                                      <Label layoutX="626.0" layoutY="251.0" text="ItemID" textFill="#1e00ff">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <ChoiceBox fx:id="OUitemID" layoutX="695.0" layoutY="251.0" prefHeight="25.0" prefWidth="124.0" />
+                                                      <Label layoutX="626.0" layoutY="313.0" text="Oparation" textFill="#1e00ff">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <ChoiceBox fx:id="Oparation" layoutX="716.0" layoutY="314.0" prefHeight="25.0" prefWidth="103.0" />
+                                                   </children></AnchorPane>
+                                          </content>
+                                        </Tab>
+                                      </tabs>
+                                    </TabPane>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+      <Tab text="Suplires">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TabPane prefHeight="570.0" prefWidth="1180.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="Suplires">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="SuplierTable" layoutX="152.0" layoutY="34.0" prefHeight="473.0" prefWidth="452.0">
+                                       <columns>
+                                          <TableColumn fx:id="SuplierID" prefWidth="85.0" text="ID" />
+                                          <TableColumn fx:id="SuplierName" prefWidth="177.0" text="Name" />
+                                          <TableColumn fx:id="SuplierPhone" prefWidth="189.0" text="Phone" />
+                                       </columns>
+                                    </TableView>
+                                    <GridPane alignment="CENTER" layoutX="728.0" layoutY="168.0" prefHeight="206.0" prefWidth="301.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label text="Name" textFill="#1507f5">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="SNameText" GridPane.columnIndex="1" />
+                                          <Label text="Phone" textFill="#1507f5" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="SPhoneText" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <Button mnemonicParsing="false" onAction="#DeleteSuplier" prefHeight="32.0" prefWidth="146.0" text="Delete" GridPane.rowIndex="2" />
+                                          <Button mnemonicParsing="false" onAction="#ADDSuplier" prefHeight="32.0" prefWidth="173.0" text="Add" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="Suplires order">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="SOrderTable" layoutX="14.0" layoutY="14.0" onMouseClicked="#SVeiwOrderLine" prefHeight="471.0" prefWidth="447.0">
+                                      <columns>
+                                        <TableColumn fx:id="SOrderID" text="OrderID" />
+                                        <TableColumn fx:id="SID" prefWidth="84.0" text="SuplirID" />
+                                          <TableColumn fx:id="SOrderPrice" prefWidth="101.0" text="Order Price" />
+                                          <TableColumn fx:id="SDay" prefWidth="66.0" text="Day" />
+                                          <TableColumn fx:id="SMonth" prefWidth="56.0" text="Month" />
+                                          <TableColumn fx:id="SYear" prefWidth="59.0" text="Year" />
+                                      </columns>
+                                    </TableView>
+                                    <TableView fx:id="SOrderLineTable" layoutX="490.0" layoutY="14.0" prefHeight="200.0" prefWidth="460.0">
+                                      <columns>
+                                        <TableColumn fx:id="SItemName" prefWidth="154.0" text="Item Name" />
+                                        <TableColumn fx:id="SOItemQuantity" prefWidth="156.0" text="Item Quantity" />
+                                          <TableColumn fx:id="SPriceLine" prefWidth="149.0" text="Price Line" />
+                                      </columns>
+                                    </TableView>
+                                 </children></AnchorPane>
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+               </children></AnchorPane>
+        </content>
+      </Tab>
+      <Tab text="Customers">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TabPane prefHeight="570.0" prefWidth="1180.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="My customers">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="CustomerTable" layoutX="152.0" layoutY="34.0" prefHeight="473.0" prefWidth="452.0">
+                                      <columns>
+                                        <TableColumn fx:id="CustomerID" prefWidth="85.0" text="ID" />
+                                        <TableColumn fx:id="CustomerName" prefWidth="177.0" text="Name" />
+                                          <TableColumn fx:id="CustomerPhone" prefWidth="189.0" text="Phone" />
+                                      </columns>
+                                    </TableView>
+                                    <GridPane layoutX="728.0" layoutY="168.0" prefHeight="206.0" prefWidth="301.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label text="Name" textFill="#1507f5">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="CNameText" GridPane.columnIndex="1" />
+                                          <Label text="Phone" textFill="#1507f5" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="CPhoneText" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <Button mnemonicParsing="false" onAction="#ADDCustomer" prefHeight="32.0" prefWidth="162.0" text="Add" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Button mnemonicParsing="false" onAction="#DeleteCustomer" prefHeight="32.0" prefWidth="146.0" text="Delete" GridPane.rowIndex="2" />
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="Customers orders">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="OrderTable" layoutX="14.0" layoutY="14.0" onMouseClicked="#VeiwOrderLine" prefHeight="477.0" prefWidth="442.0">
+                                      <columns>
+                                        <TableColumn fx:id="OrderID" prefWidth="64.0" text="OrderID" />
+                                        <TableColumn fx:id="CustomerIDO" prefWidth="75.0" text="CustomerID" />
+                                          <TableColumn fx:id="OrderPrice" prefWidth="78.0" text="Order price" />
+                                          <TableColumn fx:id="DeliveryMethod" prefWidth="92.0" text="Delivary" />
+                                          <TableColumn fx:id="DayC" prefWidth="33.0" text="Day" />
+                                          <TableColumn fx:id="MonthC" prefWidth="53.0" text="Month" />
+                                          <TableColumn fx:id="YearC" prefWidth="46.0" text="Year" />
+                                      </columns>
+                                    </TableView>
+                                    <TableView fx:id="OrderLineTable" layoutX="490.0" layoutY="14.0" onMouseClicked="#VeiwOrderLine" prefHeight="200.0" prefWidth="476.0">
+                                      <columns>
+                                        <TableColumn fx:id="ItemNameO" prefWidth="148.0" text="Item Name" />
+                                        <TableColumn fx:id="ItemQuantity" prefWidth="165.0" text="Item Quantity" />
+                                          <TableColumn fx:id="PriceLine" prefWidth="162.0" text="Price line" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+               </children></AnchorPane>
+        </content>
+      </Tab>
+      <Tab text="Items">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="ItemTable" layoutX="196.0" layoutY="36.0" prefHeight="500.0" prefWidth="356.0">
+                    <columns>
+                      <TableColumn fx:id="ItemID" prefWidth="90.0" text="Item ID" />
+                      <TableColumn fx:id="ItemName" text="Item Name" />
+                        <TableColumn fx:id="ItemPrice" prefWidth="82.0" text="Item Price" />
+                        <TableColumn fx:id="HowMuch" prefWidth="103.0" text="Quantity" />
+                    </columns>
+                  </TableView>
+                  <TextField fx:id="ItemNameText" layoutX="790.0" layoutY="107.0" />
+                  <TextField fx:id="ItemPriceText" layoutX="790.0" layoutY="212.0" />
+                  <TextField fx:id="HowMuchText" layoutX="790.0" layoutY="322.0" />
+                  <Label layoutX="642.0" layoutY="107.0" text="Name" textFill="#0e00fa">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="646.0" layoutY="212.0" text="Price" textFill="#0e00fa">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="633.0" layoutY="322.0" text="Quantity" textFill="#0e00fa">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="633.0" layoutY="433.0" mnemonicParsing="false" onAction="#ADDItem" prefHeight="25.0" prefWidth="122.0" text="Add" />
+                  <Button layoutX="827.0" layoutY="433.0" mnemonicParsing="false" onAction="#DeleteItem" prefHeight="25.0" prefWidth="116.0" text="Delete" />
+               </children></AnchorPane>
+        </content>
+      </Tab>
+      <Tab text="Cheques">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="checkTable" layoutX="181.0" layoutY="26.0" prefHeight="483.0" prefWidth="443.0">
+                    <columns>
+                      <TableColumn fx:id="checkID" prefWidth="75.0" text="ID" />
+                      <TableColumn fx:id="ccID" prefWidth="75.0" text="customerID" />
+                        <TableColumn fx:id="checkvalue" prefWidth="97.0" text="Cheque Value" />
+                        <TableColumn fx:id="checkday" prefWidth="53.0" text="DAY" />
+                        <TableColumn fx:id="checkmonth" prefWidth="67.0" text="Month" />
+                        <TableColumn fx:id="checkyear" prefWidth="75.0" text="Year" />
+                    </columns>
+                  </TableView>
+                  <Button layoutX="181.0" layoutY="513.0" mnemonicParsing="false" onAction="#refChecks" prefHeight="25.0" prefWidth="114.0" text="refresh" />
+                  <ChoiceBox fx:id="CHCIDChoice" layoutX="849.0" layoutY="170.0" prefWidth="150.0" />
+                  <ChoiceBox fx:id="CHMonthChoiceF" layoutX="870.0" layoutY="216.0" prefHeight="25.0" prefWidth="60.0" />
+                  <ChoiceBox fx:id="CHDayChoiceF" layoutX="803.0" layoutY="216.0" prefHeight="25.0" prefWidth="60.0" />
+                  <ChoiceBox fx:id="CHDayChoiceT" layoutX="803.0" layoutY="274.0" prefHeight="25.0" prefWidth="60.0" />
+                  <ChoiceBox fx:id="CHMonthChoiceT" layoutX="870.0" layoutY="274.0" prefHeight="25.0" prefWidth="60.0" />
+                  <TextField fx:id="CHYearTextT" layoutX="938.0" layoutY="274.0" prefHeight="25.0" prefWidth="61.0" />
+                  <TextField fx:id="CHYearTextF" layoutX="938.0" layoutY="216.0" prefHeight="25.0" prefWidth="61.0" />
+                  <Button layoutX="804.0" layoutY="334.0" mnemonicParsing="false" onAction="#ShowChecks" prefHeight="25.0" prefWidth="195.0" text="Show" />
+                  <Label layoutX="819.0" layoutY="245.0" text="Day" textFill="#2307ed">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="876.0" layoutY="245.0" text="Month" textFill="#2307ed">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="953.0" layoutY="245.0" text="Year" textFill="#2307ed">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="752.0" layoutY="216.0" text="From" textFill="#2307ed">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="752.0" layoutY="274.0" text="To" textFill="#2307ed">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="752.0" layoutY="170.0" text="Customer ID" textFill="#2307ed">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+        </content>
+      </Tab>
+      <Tab text="Currancy">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="CUTable" layoutX="126.0" layoutY="145.0" prefHeight="224.0" prefWidth="284.0">
+                    <columns>
+                      <TableColumn fx:id="CUID" prefWidth="75.0" text="ID" />
+                      <TableColumn fx:id="CUName" prefWidth="96.0" text="Name" />
+                        <TableColumn fx:id="CUValue" prefWidth="112.0" text="Value" />
+                    </columns>
+                  </TableView>
+                  <Button layoutX="618.0" layoutY="317.0" mnemonicParsing="false" onAction="#AddCu" text="Add" />
+                  <Button layoutX="974.0" layoutY="280.0" mnemonicParsing="false" onAction="#UpdateCu" text="Update" />
+                  <TextField fx:id="CUIDText" layoutX="545.0" layoutY="210.0" />
+                  <TextField fx:id="CUNameText" layoutX="545.0" layoutY="244.0" />
+                  <TextField fx:id="CUValueText" layoutX="545.0" layoutY="279.0" />
+                  <ChoiceBox fx:id="CUChoice" layoutX="904.0" layoutY="211.0" minHeight="27.0" prefWidth="150.0" />
+                  <TextField fx:id="CUNewValue" layoutX="904.0" layoutY="242.0" minHeight="27.0" prefWidth="150.0" />
+                  <Label layoutX="780.0" layoutY="245.0" text="New Value" textFill="#0910ed">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="780.0" layoutY="210.0" text="Currancy" textFill="#0910ed">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="461.0" layoutY="279.0" text="Value" textFill="#0910ed">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="461.0" layoutY="244.0" text="Name" textFill="#0910ed">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="461.0" layoutY="210.0" text="ID" textFill="#0910ed">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="445.0" layoutY="166.0" text="To Add New Currancy:-" textFill="#0910ed">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="749.0" layoutY="166.0" text="To Update Already Existing Currancy:-" textFill="#0910ed">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+        </content>
+      </Tab>
+  </tabs>
+   <stylesheets>
+      <URL value="@breeze.css" />
+      <URL value="@NewThemeCssFluent.css" />
+   </stylesheets>
+</TabPane>
